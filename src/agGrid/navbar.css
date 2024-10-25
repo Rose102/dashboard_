@@ -1,0 +1,117 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 70px;
+  box-shadow: var(--card-shadow);
+  position: fixed; /* Menjaga navbar tetap di atas saat scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw; /* Membentang penuh di layar */
+  z-index: 1000;
+}
+
+/* Logo styling */
+.navbar-logo .logo {
+  height: 80px; /* Pastikan nilai height sesuai */
+  width: 80px;
+  margin-top: 17px;
+  margin-left: 17px;
+  transition: transform var(--transition-duration);
+}
+
+.navbar-logo .logo:hover {
+  transform: scale(1.05);
+}
+
+/* Navbar links container */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Profile logo button */
+.profile-logo {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Profile image styling */
+.profile-image {
+  height: 40px;
+  width: auto;
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-duration);
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar link button */
+.navbar-link {
+  background: none;
+  border: 2px solid transparent;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-duration) ease;
+  position: relative;
+}
+
+.navbar-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--secondary-color);
+  transition: width var(--transition-duration) ease;
+}
+
+.navbar-link:hover::before {
+  width: 100%;
+}
+
+.navbar-link:hover {
+  color: var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--secondary-color);
+}
+
+.navbar-link:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-gelapterang {
+  margin-left: 800px;
+}
+
+/* Map label styling */
+.map-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 9px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: color var(--transition-duration);
+}
+
+.map-label:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}

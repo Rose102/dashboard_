@@ -1,0 +1,515 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f4f4f9;
+  --card-background: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition-duration: 0.3s;
+  --hover-shadow: rgba(0, 0, 0, 0.15);
+  --input-border-color: #ced4da;
+  --input-focus-color: #80bdff;
+  --input-focus-shadow: rgba(0, 123, 255, 0.25);
+}
+
+[data-theme='dark'] {
+  --background-color: #333;
+  --card-background: #444;
+  --primary-color: #1e90ff;
+  --secondary-color: #bbb;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --input-border-color: #555;
+  --input-focus-color: #4d90fe;
+  --input-focus-shadow: rgba(0, 123, 255, 0.35);
+}
+
+
+/* Tema gelap */
+[data-theme='dark'] .ag-theme-alpine {
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--input-border-color);
+}
+
+[data-theme='dark'] .ag-theme-alpine .ag-header {
+  background-color: var(--card-background);
+  color: var(--secondary-color);
+}
+
+[data-theme='dark'] .ag-theme-alpine .ag-header-cell {
+  background-color: var(--card-background);
+  color: var(--secondary-color);
+  border-color: var(--input-border-color);
+}
+
+[data-theme='dark'] .ag-theme-alpine .ag-cell {
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  border-color: var(--input-border-color);
+}
+
+[data-theme='dark'] .ag-theme-alpine .ag-row {
+  background-color: var(--background-color);
+  border-color: var(--input-border-color);
+}
+
+[data-theme='dark'] .ag-theme-alpine .ag-row:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Styling scrollbar untuk tema gelap */
+[data-theme='dark'] .ag-theme-alpine .ag-body-viewport::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+[data-theme='dark'] .ag-theme-alpine .ag-body-viewport {
+  scrollbar-color: var(--secondary-color) var(--background-color); /* Untuk Firefox */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Add your existing CSS rules here, they will automatically adapt to the theme */
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.admin-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--background-color);
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.dashboard {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stats-card {
+  background: var(--card-background);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--card-shadow);
+  text-align: center;
+  flex: 1 1 200px;
+  min-width: 200px;
+  transition: box-shadow var(--transition-duration);
+  margin-top: 80px;
+}
+
+.stats-card:hover {
+  box-shadow: 0 6px 12px var(--hover-shadow);
+}
+
+.stats-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: var(--secondary-color);
+}
+
+.stats-card p {
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.activity-log {
+  background: var(--card-background);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--card-shadow);
+  transition: box-shadow var(--transition-duration);
+  flex: 1 1 100%;
+}
+
+.activity-log:hover {
+  box-shadow: 0 6px 12px var(--hover-shadow);
+}
+
+.activity-log h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: var(--secondary-color);
+}
+
+.activity-log ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-log ul li {
+  margin-bottom: 10px;
+}
+
+.user-management {
+  background: var(--card-background);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--card-shadow);
+  transition: box-shadow var(--transition-duration);
+  flex: 1 1 100%;
+}
+
+.user-management:hover {
+  box-shadow: 0 6px 12px var(--hover-shadow);
+}
+
+.user-management h3 {
+  margin: 0 0 20px;
+  font-size: 1.2em;
+  color: var(--secondary-color);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.edit-button {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.edit-button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: darken(#dc3545, 10%);
+}
+
+/* Edit Form */
+.edit-form,
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: var(--card-background);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: box-shadow var(--transition-duration);
+  position: fixed; /* Menjaga form tetap di atas saat scroll */
+  top: 50%; /* Tengah secara vertikal */
+  left: 50%; /* Tengah secara horizontal */
+  transform: translate(-50%, -50%); /* Pusatkan form di layar */
+  z-index: 1000; /* Pastikan form di atas elemen lain */
+  width: 400px;
+  max-width: 90%;
+}
+
+/* Hover effect for forms */
+.edit-form:hover,
+.add-form:hover {
+  box-shadow: 0 6px 16px var(--hover-shadow);
+}
+
+/* Form labels */
+.edit-form label,
+.add-form label {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+/* Form inputs and selects */
+.edit-form input,
+.edit-form select,
+.add-form input,
+.add-form select {
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  width: 100%;
+  transition: border-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.edit-form input:focus,
+.edit-form select:focus,
+.add-form input:focus,
+.add-form select:focus {
+  border-color: var(--input-focus-color);
+  outline: none;
+  box-shadow: 0 0 5px var(--input-focus-shadow);
+}
+
+/* Dropdown styling */
+.edit-form select,
+.add-form select {
+  appearance: none;
+  background: var(--card-background);
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  width: 100%;
+  transition: border-color var(--transition-duration), box-shadow var(--transition-duration);
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.edit-form option,
+.add-form option {
+  background-color: var(--card-background);
+  color: #333;
+}
+
+/* Enhanced visuals in the add-form */
+.add-form h3 {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-form::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.add-form::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color var(--transition-duration);
+}
+
+.button-container button:first-child {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.button-container button:first-child:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+.button-container button:last-child {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+.button-container button:last-child:hover {
+  background-color: darken(var(--secondary-color), 10%);
+}
+
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 200px;
+}
+
+.chart {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+/* Modifikasi untuk tabel ag-Grid agar tidak overflow ke bawah */
+.ag-theme-alpine {
+  height: auto;
+  max-height: 400px; /* Tetapkan tinggi maksimum untuk tabel */
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto; /* Aktifkan scroll vertikal */
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--card-shadow);
+  transition: box-shadow var(--transition-duration);
+}
+
+/* Styling opsional untuk scrollbar */
+.ag-theme-alpine .ag-body-viewport {
+  overflow-y: scroll;
+  scrollbar-width: thin; /* Untuk Firefox */
+}
+
+.ag-theme-alpine .ag-body-viewport::-webkit-scrollbar {
+  width: 8px; /* Untuk browser Webkit */
+}
+
+.ag-theme-alpine .ag-body-viewport::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+/* Styles for the Blood Type and Gender dropdowns */
+/* Edit Form */
+.edit-form,
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: var(--card-background);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: box-shadow var(--transition-duration);
+  position: fixed; /* Menjaga form tetap di atas saat scroll */
+  top: 50%; /* Tengah secara vertikal */
+  left: 50%; /* Tengah secara horizontal */
+  transform: translate(-50%, -50%); /* Pusatkan form di layar */
+  z-index: 1000; /* Pastikan form di atas elemen lain */
+  width: 400px;
+  max-width: 90%;
+  max-height: 80vh; /* Tinggi maksimum untuk form */
+  overflow-y: auto; /* Aktifkan scroll vertikal jika diperlukan */
+}
+
+/* Hover effect for forms */
+.edit-form:hover,
+.add-form:hover {
+  box-shadow: 0 6px 16px var(--hover-shadow);
+}
+
+/* Form labels */
+.edit-form label,
+.add-form label {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+/* Form inputs and selects */
+.edit-form input,
+.edit-form select,
+.add-form input,
+.add-form select {
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  width: 100%;
+  transition: border-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.edit-form input:focus,
+.edit-form select:focus,
+.add-form input:focus,
+.add-form select:focus {
+  border-color: var(--input-focus-color);
+  outline: none;
+  box-shadow: 0 0 5px var(--input-focus-shadow);
+}
+
+/* Dropdown styling */
+.edit-form select,
+.add-form select {
+  appearance: none;
+  background: var(--card-background);
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  width: 100%;
+  transition: border-color var(--transition-duration), box-shadow var(--transition-duration);
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.edit-form option,
+.add-form option {
+  background-color: var(--card-background);
+  color: #333;
+}
+
+/* Enhanced visuals in the add-form */
+.add-form h3 {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-form::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.add-form::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+

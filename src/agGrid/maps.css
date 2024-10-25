@@ -1,0 +1,9 @@
+/* maps.css */
+.map-container {
+    height: 500px; /* atau sesuaikan dengan ukuran yang diinginkan */
+    width: 100%;
+  }
+
+  .leaflet-control-geocoder {
+    z-index: 1000; /* Ensure the search control is above other map controls */
+  }
